@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/testDB', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/zagat', {useNewUrlParser: true});
 
 let db = mongoose.connection
 
@@ -10,25 +10,30 @@ db.once('open', () => {
     console.log(error);
 })
 
-let citySchema = new mongoose.Schema({
+let restuarantSchema = new mongoose.Schema({
     name: String,
-    description: String
+    description: String,
+    syle: String,
+    price: String,
+    rating: Number,
+    img_url: String,
+    location: String
 });
 
-let Cities = mongoose.model('Cities', citySchema);
+let Restaurants = mongoose.model('Cities', restuarantSchema);
 
 
 
-let save = (city, callback) => {
+let save = (restaurant, callback) => {
     
 
-  Cities.find({name: city.name}).exec((err, result) => {
+  Restaurants.find({name: restaurant.name}).exec((err, result) => {
           if(err) return err;
           if (result.length) return;
       
-          let newCity = new Cities ({
-            name: city.name,
-            description: city.description
+          let newRestaurants = new Restaurants ({
+            name: restaurant.name,
+            description: restaurant.description
           }).save(err => {
             if (err) console.log(err)
           })
