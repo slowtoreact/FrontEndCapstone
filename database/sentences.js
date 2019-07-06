@@ -1,5 +1,6 @@
 const Sentencer = require('sentencer');
 const faker = require('faker');
+const fs = require('fs');
 
 Sentencer.configure({
   nounList: ["ingredients", "cuisine", "cocktails", "food", "craft beer", 
@@ -73,7 +74,6 @@ let priceGenerator = () => {
 
 let dataGenerator = () => {
 	let jsonArray = [];
-	let jsonObject = {};
 
 	restaurantNames.forEach(name => {
 
@@ -86,6 +86,10 @@ let dataGenerator = () => {
 			img_url: imageGenerator(),
 			location: coordinateGenerator()
 		})
+	})
+	let jsonData = JSON.stringify(jsonArray);
+	fs.writeFile("restaurantData.json", jsonData, 'utf8', () => {
+		console.log('done')
 	})
 	return jsonArray;
 }
