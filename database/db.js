@@ -13,7 +13,7 @@ db.once('open', () => {
 let restuarantSchema = new mongoose.Schema({
     name: String,
     description: String,
-    syle: String,
+    style: String,
     price: String,
     rating: Number,
     img_url: String,
