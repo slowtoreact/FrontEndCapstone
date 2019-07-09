@@ -1,0 +1,15 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card {
+    width: 50vh;
+    /* height: 30vh; */
+    margin: 0px;
+}
+
+img {
+    width: 20vh;
+    height: 20vh;
+}

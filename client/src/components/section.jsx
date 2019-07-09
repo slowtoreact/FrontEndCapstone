@@ -5,7 +5,7 @@ import EachCard from './eachCard.jsx';
 export default function Cards (props) {
 	// console.log(props.restaurants);
 	return (
-		<div>
+		<div className="gridContainer">
 			{props.restaurants.map(restaurant => 
 				<EachCard restaurant={restaurant}/>
 			)}
