@@ -2,7 +2,7 @@ const express = require('express');
 const db = require('./database/db.js')
 const bodyParser = require('body-parser');
 const app = express();
-const dataGenerator = require('./database/seeder.js/index.js')
+const dataGenerator = require('./database/seeder.js')
 
 app.use(express.static('./client/dist'))
 app.use(bodyParser.json())

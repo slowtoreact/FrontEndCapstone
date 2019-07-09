@@ -2,12 +2,13 @@ import React from 'react';
 import EachCard from './eachCard.jsx';
 
 
-export function Cards (props) {
+export default function Cards (props) {
+	// console.log(props.restaurants);
 	return (
 		<div>
-			{props.map(card => {
-				<EachCard card={card}/>
-			})}
+			{props.restaurants.map(restaurant => 
+				<EachCard restaurant={restaurant}/>
+			)}
 		</div>
 	)
 }

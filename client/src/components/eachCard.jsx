@@ -1,9 +1,12 @@
 import React from 'react';
 
-export function EachCard (props) {
+export default function EachCard (restaurant) {
+	console.log(restaurant.restaurant)
   return (
 		<div>
-			
+			<p>
+			{restaurant.restaurant.name}
+			</p>
 		</div>
 	)
 }
