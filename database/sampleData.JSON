@@ -1,7 +1,7 @@
 
 	[{
 	"name": "THE KITCHEN",
-	"syle": "American",
+	"style": "American",
 	"price": "$$$",
 	"description": "Farm-to-table American food in an urban space, plus drinks from the upstairs community bar.",
 	"rating": 4.5,
@@ -10,7 +10,7 @@
 	},
 	{
 		"name": "SALT THE BISTRO",
-		"syle": "Brunch",
+		"style": "Brunch",
 		"price": "$$",
 		"description": "Farm-to-table American eats with changing menu using local ingredients in cuisine & cocktails.",
 		"rating": 4.3,
@@ -19,7 +19,7 @@
 		},
 		{
 			"name": "SPRUCE FARM & FISH",
-			"syle": "American",
+			"style": "American",
 			"price": "$$",
 			"description": "Polished fixture at the Hotel Boulderado serving seasonal modern New American cuisine & fine wines.",
 			"rating": 4.0,
@@ -28,7 +28,7 @@
 		},
 		{
 			"name": "NEXT DOOR",
-			"syle": "Vegan",
+			"style": "Vegan",
 			"price": "$$",
 			"description": "Adjacent to its namesake flagship, a casual hot spot for farm-to-table comfort food & craft beer.",
 			"rating": 3.9,
