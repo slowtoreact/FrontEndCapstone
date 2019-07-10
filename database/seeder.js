@@ -2,6 +2,8 @@ const Sentencer = require('sentencer');
 const faker = require('faker');
 const fs = require('fs');
 const db = require('./db');
+const axios = require('axios');
+const API_KEY = require('../config.js').API_KEY
 
 Sentencer.configure({
   nounList: ["ingredients", "cuisine", "cocktails", "food", "craft beer", 
@@ -68,6 +70,15 @@ let syleGenerator = () => {
 }
 
 let imageGenerator = () => {
+	// let URL = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent('food');
+	// axios.get(URL)
+	// .then(result => {
+	// 	imgageUrl.push(result.data.hits)
+	// 	console.log(result.data.hitswebformatURL)
+	// })
+	// .catch(err => {
+	// 	console.log(err)
+	// })
 	return faker.image.food();
 }
 
@@ -81,10 +92,10 @@ let priceGenerator = () => {
 let dataGenerator = () => {
 	let jsonArray = [];
 
-	restaurantNames.forEach(name => {
-		console.log(name);
+	
+	for (var i = 0; i < restaurantNames.length; i++) {
 		db.save({
-			name: name,
+			name: restaurantNames[i],
 			description: randomSentence(),
 			style: syleGenerator(),
 			price: priceGenerator(),
@@ -92,13 +103,14 @@ let dataGenerator = () => {
 			img_url: imageGenerator(),
 			location: coordinateGenerator()
 		})
-	})
+	}
 	// let jsonData = JSON.stringify(jsonArray);
 	// fs.writeFile("restaurantData.json", jsonData, 'utf8', () => {
 	// 	console.log('done')
 	// })
 	// return jsonArray;
 }
+
 dataGenerator();
 
 module.exports.dataGenerator = dataGenerator;

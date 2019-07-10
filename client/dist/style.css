@@ -24,3 +24,16 @@ img {
 	width: 3vh;
 	height: 3vh;
 }
+
+.zagatImg {
+	display: flex;
+	align-content: center;
+}
+.foodRating {
+	margin-left: 5px;
+}
+
+.rating {
+	margin-left: 5px;
+	color: #880015;
+}

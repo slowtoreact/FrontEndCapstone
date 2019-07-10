@@ -12,7 +12,8 @@ export default function EachCard (restaurant) {
 			</h4> 
 			<div className="zagatImg">
 				<img src="https://www.zagat.com/assets/img/z-logo-icon-red.svg"></img>
-				<span>FOOD {restaurant.restaurant.rating}</span>
+				<span className="foodRating">FOOD</span>
+				<span className="rating">{restaurant.restaurant.rating}</span>
 			</div>
 			<p>{restaurant.restaurant.description}</p> 
 		</div>
