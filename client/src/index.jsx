@@ -20,6 +20,10 @@ class App extends React.Component{
     //   location: [40.0178, -105.2817]
     // }
   }
+  handleClick (e) {
+    e.preventDefault();
+    console.log(e.currentTarget)
+  }
   componentDidMount() {
   
     axios.get('/api/cities')
@@ -34,10 +38,10 @@ class App extends React.Component{
 
 
   render () {
-    console.log(this.state.restaurants.data)
+    // console.log(this.state.restaurants.data)
     return (
     <div>
-      <Card restaurants={this.state.restaurants}/>
+      <Card restaurants={this.state.restaurants} onClick={(e) => this.handleClick(e)}/>
     </div>
     )
   }

@@ -37,3 +37,8 @@ img {
 	margin-left: 5px;
 	color: #880015;
 }
+
+.restName {
+	text-decoration: underline #880015;
+
+}

@@ -3,11 +3,11 @@ import EachCard from './eachCard.jsx';
 
 
 export default function Cards (props) {
-	// console.log(props.restaurants);
+	// console.log(props);
 	return (
 		<div className="gridContainer">
 			{props.restaurants.map(restaurant => 
-				<EachCard restaurant={restaurant}/>
+				<EachCard key={restaurant._id} restaurant={restaurant} onClick={(e) => props.onClick(e)}/>
 			)}
 		</div>
 	)
