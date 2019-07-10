@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function EachCard (restaurant) {
-	console.log(restaurant.restaurant)
+	// console.log(restaurant.restaurant)
   return (
 		<div className="card">
 		<img src={restaurant.restaurant.img_url}></img>

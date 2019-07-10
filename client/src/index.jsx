@@ -2,13 +2,14 @@ console.log('Hello Node.js project.');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import sampleRestaurants from '../../database/sampleData.json';
-import Card from './components/section.jsx';
+import Card from './components/card.jsx';
+import axios from 'axios';
 
 class App extends React.Component{
   constructor(props) {
   super(props) 
   this.state = {
-    restaurants: sampleRestaurants
+    restaurants: []
   }
     //   name: 'THE KITCHEN',
     //   syle: "American",
@@ -20,12 +21,20 @@ class App extends React.Component{
     // }
   }
   componentDidMount() {
-    this.setState({
-      restaurants: sampleRestaurants
-    })
+  
+    axios.get('/api/cities')
+    .then(result => this.setState({
+      restaurants: result.data
+      
+    }))
+    .catch(error => this.setState({
+        error
+    }));
   }
 
+
   render () {
+    console.log(this.state.restaurants.data)
     return (
     <div>
       <Card restaurants={this.state.restaurants}/>
