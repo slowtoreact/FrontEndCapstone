@@ -22,7 +22,8 @@ class App extends React.Component{
   }
   handleClick (e) {
     e.preventDefault();
-    console.log(e.currentTarget)
+// console.log(this)
+    console.log(e.currentTarget.getElementsByTagName("b")[0].innerHTML)
   }
   componentDidMount() {
   
