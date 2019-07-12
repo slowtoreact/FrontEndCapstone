@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/zagat', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/zagat', { useNewUrlParser: true });
 
 let db = mongoose.connection
 
@@ -55,9 +55,17 @@ let nearby = (query, callback) => {
   Restaurants.find(query).exec((err, result) => {
     if (err) return err;
     else {
-      return Restaurants.find({style: result[0].style}).limit(6).exec((err, newResult) => {
+      return Restaurants.find({ style: result[0].style }).limit(7).exec((err, newResult) => {
         if (err) return err;
-        else callback(newResult);
+        else {
+          let resultArr = [];
+          for (var i = 0; i < newResult.length; i++) {
+            if (newResult[i].name !== query.name) {
+              resultArr.push(newResult[i])
+            }
+          }
+          callback(resultArr);
+        }
       })
     }
   })
