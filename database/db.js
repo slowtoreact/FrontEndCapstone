@@ -68,10 +68,14 @@ let nearby = (query, callback) => {
           restaurantNameArray.forEach(restaurant => {
             // console.log(Math.abs(restaurant.location[0] - result[0].location[0]) < 0.02)
             if (Math.abs(restaurant.location[0] - result[0].location[0]) < 0.02 && Math.abs(restaurant.location[1] - result[0].location[1]) < 0.02)  {
+              if (restaurantCoordinateArray.length < 6) {
               restaurantCoordinateArray.push(restaurant)
+              }
+               else return
             }
           })
-          callback(restaurantCoordinateArray);
+          if (restaurantCoordinateArray.length) callback(restaurantCoordinateArray);
+          else callback(result)
         }
       })
     }

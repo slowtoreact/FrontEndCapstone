@@ -1,16 +1,17 @@
 import React from 'react';
-
+import { useState } from 'react';
 
 export default function EachCard (restaurant) {
 	let restName;
-	if (restaurant.state.hover) {
+	const [hover, setHover] = useState(false);
+	
+	if (hover) {
 		restName = { "textDecoration": "underline #880015" }
 	} else {restName = {"textDecoration": "underline white"}}
-
+console.log([hover, setHover])
   return (
 		<div className="card" onClick={(e) => restaurant.onClick(e)}
-		onMouseOver={() => restaurant.onMouseOver()} style={restaurant.style}
-			state={restaurant.state} style={restName}>
+		onMouseOver={() => setHover(true)} style={restName}>
 		<img src={restaurant.restaurant.img_url}></img>
 		<div className="container">
 			<h4>
