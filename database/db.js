@@ -47,9 +47,22 @@ let save = (restaurant, callback) => {
 }
 
 let load = callback => {
-  let cb = (err, repos) => { callback(repos) };
+  let cb = (err, rest) => { callback(rest) };
   Restaurants.find(cb).limit(6);
+}
+
+let nearby = (query, callback) => {
+  Restaurants.find(query).exec((err, result) => {
+    if (err) return err;
+    else {
+      return Restaurants.find({style: result[0].style}).limit(6).exec((err, newResult) => {
+        if (err) return err;
+        else callback(newResult);
+      })
+    }
+  })
 }
 
 module.exports.save = save;
 module.exports.load = load;
+module.exports.nearby = nearby;

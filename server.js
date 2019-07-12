@@ -17,6 +17,11 @@ app.get('/api/cities', (req, res) => {
   db.load(res.send.bind(res));
 });
 
+app.get('/restaurant', (req, res) => {
+  console.log(req.query)
+  db.nearby(req.query, res.send.bind(res))
+})
+
 app.listen(port, () => {
     console.log(`listening on port ${port}`)
 });

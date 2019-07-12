@@ -9,7 +9,8 @@ class App extends React.Component{
   constructor(props) {
   super(props) 
   this.state = {
-    restaurants: []
+    restaurants: [],
+    hover: false
   }
     //   name: 'THE KITCHEN',
     //   syle: "American",
@@ -23,8 +24,24 @@ class App extends React.Component{
   handleClick (e) {
     e.preventDefault();
 // console.log(this)
-    console.log(e.currentTarget.getElementsByTagName("b")[0].innerHTML)
+    axios.get(`/restaurant`, {
+      params: {
+        name: e.currentTarget.getElementsByTagName("b")[0].innerHTML
+      }
+    })
+    .then(result => {
+      this.setState({
+        restaurants: result.data
+      })
+    })
+    console.log(this.state.restaurants)
   }
+
+  toggleHover() {
+    console.log(this.state.hover)
+    this.setState({hover: !this.state.hover})
+  }
+
   componentDidMount() {
   
     axios.get('/api/cities')
@@ -42,7 +59,8 @@ class App extends React.Component{
     // console.log(this.state.restaurants.data)
     return (
     <div>
-      <Card restaurants={this.state.restaurants} onClick={(e) => this.handleClick(e)}/>
+      <Card restaurants={this.state.restaurants} onClick={(e) => this.handleClick(e)} state={this.state}
+      onMouseOver={() => this.toggleHover()}/>
     </div>
     )
   }
