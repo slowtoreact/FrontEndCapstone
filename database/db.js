@@ -55,16 +55,23 @@ let nearby = (query, callback) => {
   Restaurants.find(query).exec((err, result) => {
     if (err) return err;
     else {
-      return Restaurants.find({ style: result[0].style }).limit(7).exec((err, newResult) => {
+      return Restaurants.find({ style: result[0].style }).exec((err, newResult) => {
         if (err) return err;
         else {
-          let resultArr = [];
+          let restaurantNameArray = [];
+          let restaurantCoordinateArray = [];
           for (var i = 0; i < newResult.length; i++) {
             if (newResult[i].name !== query.name) {
-              resultArr.push(newResult[i])
+              restaurantNameArray.push(newResult[i])
             }
           }
-          callback(resultArr);
+          restaurantNameArray.forEach(restaurant => {
+            // console.log(Math.abs(restaurant.location[0] - result[0].location[0]) < 0.02)
+            if (Math.abs(restaurant.location[0] - result[0].location[0]) < 0.02 && Math.abs(restaurant.location[1] - result[0].location[1]) < 0.02)  {
+              restaurantCoordinateArray.push(restaurant)
+            }
+          })
+          callback(restaurantCoordinateArray);
         }
       })
     }
