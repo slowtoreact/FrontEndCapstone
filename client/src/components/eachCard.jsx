@@ -8,14 +8,14 @@ export default function EachCard (restaurant) {
 	if (hover) {
 		restName = { "textDecoration": "underline #880015" }
 	} else {restName = {"textDecoration": "underline white"}}
+
 console.log([hover, setHover])
   return (
-		<div className="card" onClick={(e) => restaurant.onClick(e)}
-		onMouseOver={() => setHover(true)} style={restName}>
+		<div className="card" onClick={(e) => restaurant.onClick(e)} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
 		<img src={restaurant.restaurant.img_url}></img>
 		<div className="container">
 			<h4>
-				<div><b className="restName">{restaurant.restaurant.name}</b></div>
+				<div><b className="restName" style={restName}>{restaurant.restaurant.name}</b></div>
 				<div>{restaurant.restaurant.style} {restaurant.restaurant.price}</div>
 			</h4> 
 			<div className="zagatImg">
