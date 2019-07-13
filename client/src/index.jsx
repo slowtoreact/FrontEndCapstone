@@ -23,10 +23,11 @@ class App extends React.Component {
   }
   handleClick(e) {
     e.preventDefault();
-    // console.log(this)
+    var decoded = (e.currentTarget.getElementsByTagName("b")[0].innerHTML).replace('amp;', '')
+    console.log(decoded)
     axios.get(`/restaurant`, {
       params: {
-        name: e.currentTarget.getElementsByTagName("b")[0].innerHTML
+        name: decoded
       }
     })
       .then(result => {
