@@ -11,7 +11,7 @@ db.once('open', () => {
 })
 
 let restuarantSchema = new mongoose.Schema({
-  name: String,
+  name: { type: String, required: true },
   description: String,
   style: String,
   price: String,
@@ -21,8 +21,6 @@ let restuarantSchema = new mongoose.Schema({
 });
 
 let Restaurants = mongoose.model('Cities', restuarantSchema);
-
-
 
 let save = (restaurant, callback) => {
 
@@ -47,7 +45,7 @@ let save = (restaurant, callback) => {
 }
 
 let load = callback => {
-  let cb = (err, rest) => { callback(rest) };
+  let cb = (err, result) => { callback(result) };
   Restaurants.find(cb).limit(6);
 }
 
@@ -55,23 +53,22 @@ let nearby = (query, callback) => {
   Restaurants.find(query).exec((err, result) => {
     if (err) return err;
     else {
-      return Restaurants.find({ style: result[0].style }).exec((err, newResult) => {
+      return Restaurants.find({ style: result[0].style }).exec((err, restaurantsWithSameStyle) => {
         if (err) return err;
         else {
           let restaurantNameArray = [];
           let restaurantCoordinateArray = [];
-          for (var i = 0; i < newResult.length; i++) {
-            if (newResult[i].name !== query.name) {
-              restaurantNameArray.push(newResult[i])
+          for (var i = 0; i < restaurantsWithSameStyle.length; i++) {
+            if (restaurantsWithSameStyle[i].name !== query.name) {
+              restaurantNameArray.push(restaurantsWithSameStyle[i])
             }
           }
           restaurantNameArray.forEach(restaurant => {
-            // console.log(Math.abs(restaurant.location[0] - result[0].location[0]) < 0.02)
-            if (Math.abs(restaurant.location[0] - result[0].location[0]) < 0.02 && Math.abs(restaurant.location[1] - result[0].location[1]) < 0.02)  {
+            if (Math.abs(restaurant.location[0] - result[0].location[0]) <= 0.02 && Math.abs(restaurant.location[1] - result[0].location[1]) <= 0.02) {
               if (restaurantCoordinateArray.length < 6) {
-              restaurantCoordinateArray.push(restaurant)
+                restaurantCoordinateArray.push(restaurant)
               }
-               else return
+              else return
             }
           })
           if (restaurantCoordinateArray.length) callback(restaurantCoordinateArray);
@@ -82,6 +79,7 @@ let nearby = (query, callback) => {
   })
 }
 
+module.exports.Restaurants = Restaurants;
 module.exports.save = save;
 module.exports.load = load;
 module.exports.nearby = nearby;

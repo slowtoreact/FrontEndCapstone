@@ -3,6 +3,7 @@ import EachCard from './eachCard.jsx';
 
 
 export default function Cards(props) {
+	console.log(props)
 	return (
 		<div className="gridContainer">
 			{props.restaurants.map(restaurant =>
@@ -11,3 +12,5 @@ export default function Cards(props) {
 		</div>
 	)
 }
+
+//Cards expexts an array of objects 
