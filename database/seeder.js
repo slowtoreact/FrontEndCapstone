@@ -38,7 +38,7 @@ let num = Math.ceil(Math.random()*3)
 
 let randomScore = () => {
 		let rating = ((Math.random()*3) + 2);
-		return Number(rating.toFixed(1));
+		return rating.toFixed(1);
 }
 
 let restaurantNames = ["CENTRO", "JULEP", "DIO MIO","SAFTA", "BARTACO", "BRASSERIE TEN TEN", "RVER & WOODS", "THE MED", "CHINA GOURMET", "HAPA SUSHI",

@@ -1,11 +1,5 @@
 @media screen and (min-width: 25em) {
-	.gridContainer {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-evenly;
-		background-color: #F1F1F2;
-	}
-
+	
 	.container {
 		padding: 20px;
 		width: 100%;
@@ -16,27 +10,33 @@
 	.card {
 		
 		flex: 0 1 100%;
-		/* position: relative;
-		width: 100%; */
 		height: 30vh;
 		background-color: #F1F1F2;
-		/* background-size: cover; */
 		padding-top: 2px;
 		padding-bottom: 2px;
+		padding-right: 1vh;
+		padding-left: 1vh;
 		display: flex;
 		margin: 0px;
 	}
 	
+	.gridContainer {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		background-color: #F1F1F2;
+	}
+	.ribbon {
+		margin-left: 1vh;
+		margin-right: 1vh;
+		border-top: black solid 1px;
+		font-size: 20px;
+		line-height: 7vh;
+	}
 }
 
 @media screen and (min-width: 35em) {
-	.gridContainer {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-evenly;
-		background-color: #F1F1F2;
-	}
-
+	
 	.container {
 		padding: 20px;
 		width: 100%;
@@ -45,30 +45,44 @@
 	}
 	
 	.card {
-		
 		flex: 0 1 100%;
-		/* position: relative;
-		width: 100%; */
 		height: 30vh;
 		background-color: #F1F1F2;
-		/* background-size: cover; */
 		padding-top: 10px;
 		padding-bottom: 10px;
+		padding-right: 5vh;
+		padding-left: 5vh;
 		display: flex;
 		margin: 0px;
 	}
 	
+	.gridContainer {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		background-color: #F1F1F2;
+	}
+	.ribbon {
+		margin-left: 5vh;
+		margin-right: 5vh;
+		border-top: black solid 1px;
+		font-size: 20px;
+		line-height: 7vh;
+	}
 }
 
 
 @media screen and (min-width: 60em) {
+
 	.gridContainer {
 		display: flex;
+		margin-right: 5vh;
+		margin-left: 5vh;
 		flex-wrap: wrap;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		background-color: #F1F1F2;
 	}
-
+	
 	.container {
 		padding: 20px;
 		width: 100%;
@@ -77,19 +91,23 @@
 	}
 	
 	.card {
-		
-		flex: 0 1 46%;
-		/* position: relative;
-		width: 100%; */
+		flex: 0 1 calc(50% - 1em);
 		height: 30vh;
 		background-color: #F1F1F2;
 		padding-top: 10px;
 		padding-bottom: 10px;
+		padding-right: 0px;
+		padding-left: 0px;
 		display: flex;
-		margin: 0px;
+	}
+	.ribbon {
+		margin-left: 5vh;
+		margin-right: 5vh;
+		border-top: black solid 1px;
+		font-size: 20px;
+		line-height: 7vh;
 	}
 }
-
 
 
 .restImg {
@@ -119,7 +137,13 @@
 	color: #880015;
 }
 
+#app {
+	background-color: #F1F1F2;
+}
 
+body {
+	background-color: #F1F1F2;
+}
 
 
 /* .restName {

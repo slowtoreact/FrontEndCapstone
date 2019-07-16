@@ -22,7 +22,7 @@ export default function EachCard(props) {
 			<div className="container">
 				<h4>
 					<div><b className="restName" style={restName}>{props.restaurant.name}</b></div>
-					<div>{props.restaurant.style} {props.restaurant.price}</div>
+					<div className="styleAndPrice">{props.restaurant.style} {props.restaurant.price}</div>
 				</h4>
 				<div className="zagatImg">
 					<img src="https://www.zagat.com/assets/img/z-logo-icon-red.svg"></img>

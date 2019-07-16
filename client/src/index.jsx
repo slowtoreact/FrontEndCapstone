@@ -7,14 +7,25 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      restaurants: []
+      restaurants: [],
+      name: "The Kitchen",
+      style: "American"
+
     }
   }
+
 
   handleClick(e) {
     e.preventDefault();
     let decoded = (e.currentTarget.getElementsByTagName("b")[0].innerHTML).replace('amp;', '')
-    console.log(decoded)
+    let currentStyle = e.currentTarget.getElementsByClassName("styleAndPrice")[0].innerHTML.split(' ')
+    
+    function camelCase(str) {
+      return str.replace(/\w\S*/g, function(txt){
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      });
+    }
+
     axios.get(`/restaurant`, {
       params: {
         name: decoded
@@ -22,7 +33,9 @@ class App extends React.Component {
     })
       .then(result => {
         this.setState({
-          restaurants: result.data
+          restaurants: result.data,
+          name: camelCase(decoded),
+          style: currentStyle[0]
         })
       })
   }
@@ -39,7 +52,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="nearbyService">
+        <div className="ribbon">More {this.state.style} Near {this.state.name}</div>
         <Card restaurants={this.state.restaurants} onClick={(e) => this.handleClick(e)} />
       </div>
     )

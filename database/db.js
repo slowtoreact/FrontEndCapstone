@@ -15,7 +15,7 @@ let restuarantSchema = new mongoose.Schema({
   description: String,
   style: String,
   price: String,
-  rating: Number,
+  rating: String,
   img_url: String,
   location: Array
 });
