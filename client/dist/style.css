@@ -8,9 +8,9 @@
 	}
 	
 	.card {
-		
 		flex: 0 1 100%;
-		height: 30vh;
+		min-height: 214px;
+		height: 214px;
 		background-color: #F1F1F2;
 		padding-top: 2px;
 		padding-bottom: 2px;
@@ -46,7 +46,8 @@
 	
 	.card {
 		flex: 0 1 100%;
-		height: 30vh;
+		min-height: 214px;
+		height: 214px;
 		background-color: #F1F1F2;
 		padding-top: 10px;
 		padding-bottom: 10px;
@@ -72,7 +73,7 @@
 }
 
 
-@media screen and (min-width: 60em) {
+@media screen and (min-width: 55em) {
 
 	.gridContainer {
 		display: flex;
@@ -92,7 +93,8 @@
 	
 	.card {
 		flex: 0 1 calc(50% - 1em);
-		height: 30vh;
+		min-height: 214px;
+		height: 214px;
 		background-color: #F1F1F2;
 		padding-top: 10px;
 		padding-bottom: 10px;
@@ -120,8 +122,8 @@
 }
 
 .zagatImg img {
-	width: 3vh;
-	height: 3vh;
+	width: 20px;
+	height: 20px;
 }
 
 .zagatImg {
@@ -145,6 +147,10 @@ body {
 	background-color: #F1F1F2;
 }
 
+.styleAndPrice {
+	color: #7F7F7F;
+	font-weight: normal;
+}
 
 /* .restName {
 	text-decoration: underline #880015;
