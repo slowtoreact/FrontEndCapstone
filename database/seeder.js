@@ -53,7 +53,7 @@ let restaurantNames = ["CENTRO", "JULEP", "DIO MIO","SAFTA", "BARTACO", "BRASSER
 "WILD STANDARD", "ZOLO SOUTHWESTERN GRILL", "JAX FISHOUSE & OYSTER BAR - BOULDER", "THE WEST END TAVERN", "THE BOULDER DUSHANBE TEAHOUSE", "HUMBOLDT FARM, FISH, WINE", "ACORN", "BANG UP TO THE ELEPHANT!",
 "ALOY MODERN THAI", "THE POPULIST", "MORIN", "RYE SOCIETY", "BECKON"]
 
-let imageUrls = ["https://media-cdn.tripadvisor.com/media/photo-s/0e/20/dd/8d/centro-cafe.jpg", "http://juleprino.com/wp-content/uploads/2018/02/menu.jpg",
+let imageUrls = ["https://zagat-photos.imgix.net/ChIJdzSU5Sbsa4cRWOQomlwYqxI/9c269383b4cc2b2909264457f42bcb4b.jpg?h=224&w=224&fit=crop&q=75&fm=jpg&auto=format", "http://juleprino.com/wp-content/uploads/2018/02/menu.jpg",
 "https://media-cdn.tripadvisor.com/media/photo-s/0e/43/f5/fb/photo1jpg.jpg",
 "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/40883757_1548306981981738_7043764687770484736_o.jpg?_nc_cat=108&_nc_oc=AQn4b_QVWLf6L9UYgbv4caApTp_9RJSuTtoZppH8P5DsdU0Av6P_S6BOyE1cCXeLtQ8&_nc_ht=scontent-sjc3-1.xx&oh=ef5093bb5a48781fa37dcba886637465&oe=5DAF78B0",
 "https://cdn.vox-cdn.com/thumbor/leJUx_9YvcyuN_aUhbT4syzI8tA=/0x0:1920x1280/1520x1013/filters:focal(807x487:1113x793):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/62704908/bartaco.0.jpg",
@@ -168,19 +168,6 @@ let syleGenerator = () => {
 	return styles[index];
 }
 
-// let imageGenerator = () => {
-// 	// let URL = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent('food');
-// 	// axios.get(URL)
-// 	// .then(result => {
-// 	// 	imgageUrl.push(result.data.hits)
-// 	// 	console.log(result.data.hitswebformatURL)
-// 	// })
-// 	// .catch(err => {
-// 	// 	console.log(err)
-// 	// })
-// 	return faker.image.food();
-// }
-
 let priceGenerator = () => {
 	let num = Math.ceil(Math.random()*3);
 	if (num === 3) return "$$$";
@@ -189,7 +176,6 @@ let priceGenerator = () => {
 }
 
 let dataGenerator = () => {
-	let jsonArray = [];
 	
 	for (var i = 0; i < restaurantNames.length; i++) {
 		db.save({
@@ -202,11 +188,6 @@ let dataGenerator = () => {
 			location: coordinateGenerator()
 		})
 	}
-	// let jsonData = JSON.stringify(jsonArray);
-	// fs.writeFile("restaurantData.json", jsonData, 'utf8', () => {
-	// 	console.log('done')
-	// })
-	// return jsonArray;
 }
 
 dataGenerator();

@@ -2,19 +2,25 @@ import React from 'react';
 import { useState } from 'react';
 
 export default function EachCard(props) {
-	console.log(props)
+
 	let restName;
 	let cursor;
 	const [hover, setHover] = useState(false);
 
 	if (hover) {
-		restName = { "textDecoration": "underline #880015" };
+		restName = { 
+			transition: " all 300ms ease-in",
+			borderBottom: "1px solid #B7385E"
+		};
 		cursor = { "cursor": "pointer" }
 	} else {
-		restName = { "textDecoration": "underline white" }
+		restName = { 
+			transition: " all 300ms ease-out",
+			borderBottom: "1px solid white", 
+			}
 		cursor = { "cursor": "arrow" }
 	}
-
+console.log(restName)
 	return (
 		<div className="card" onClick={(e) => props.onClick(e)} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}
 			style={cursor}>
@@ -29,7 +35,7 @@ export default function EachCard(props) {
 					<span className="foodRating">FOOD</span>
 					<span className="rating">{props.restaurant.rating}</span>
 				</div>
-				<p>{props.restaurant.description}</p>
+				<p className="description">{props.restaurant.description}</p>
 			</div>
 		</div>
 	)

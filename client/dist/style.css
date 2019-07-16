@@ -27,11 +27,15 @@
 		background-color: #F1F1F2;
 	}
 	.ribbon {
+		font-family: Calibri;
 		margin-left: 1vh;
 		margin-right: 1vh;
 		border-top: black solid 1px;
-		font-size: 20px;
-		line-height: 7vh;
+		font-size: 22px;
+    	letter-spacing: .004em;
+		line-height: 50px;
+		margin-bottom: 10px;
+		font-weight: 375;
 	}
 }
 
@@ -49,10 +53,10 @@
 		min-height: 214px;
 		height: 214px;
 		background-color: #F1F1F2;
-		padding-top: 10px;
-		padding-bottom: 10px;
-		padding-right: 5vh;
-		padding-left: 5vh;
+		padding-top: 12px;
+		padding-bottom: 12px;
+		padding-right: 7vh;
+		padding-left: 7vh;
 		display: flex;
 		margin: 0px;
 	}
@@ -64,11 +68,8 @@
 		background-color: #F1F1F2;
 	}
 	.ribbon {
-		margin-left: 5vh;
-		margin-right: 5vh;
-		border-top: black solid 1px;
-		font-size: 20px;
-		line-height: 7vh;
+		margin-left: 7vh;
+		margin-right: 7vh;
 	}
 }
 
@@ -77,8 +78,8 @@
 
 	.gridContainer {
 		display: flex;
-		margin-right: 5vh;
-		margin-left: 5vh;
+		margin-right: 7vh;
+		margin-left: 7vh;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		background-color: #F1F1F2;
@@ -93,21 +94,13 @@
 	
 	.card {
 		flex: 0 1 calc(50% - 1em);
-		min-height: 214px;
-		height: 214px;
-		background-color: #F1F1F2;
-		padding-top: 10px;
-		padding-bottom: 10px;
 		padding-right: 0px;
 		padding-left: 0px;
-		display: flex;
+		
 	}
 	.ribbon {
-		margin-left: 5vh;
-		margin-right: 5vh;
-		border-top: black solid 1px;
-		font-size: 20px;
-		line-height: 7vh;
+		margin-left: 7vh;
+		margin-right: 7vh;
 	}
 }
 
@@ -119,6 +112,8 @@
 		max-width: 40%;
 		max-height: 100%;
 		box-sizing: border-box;
+		object-fit: cover;
+		object-position: center;
 }
 
 .zagatImg img {
@@ -131,12 +126,21 @@
 	align-content: center;
 }
 .foodRating {
+	font-family: Calibri;
+	font-size: 13px;
 	margin-left: 5px;
+	letter-spacing: .061em;
+	font-weight: 550;
+	line-height: 20px;
 }
 
 .rating {
+	font-family: Calibri;
 	margin-left: 5px;
-	color: #880015;
+	color: #B7385E;
+	font-weight: 550;
+	font-size: 13px;
+	line-height: 20px;
 }
 
 #app {
@@ -146,12 +150,31 @@
 body {
 	background-color: #F1F1F2;
 }
-
-.styleAndPrice {
-	color: #7F7F7F;
-	font-weight: normal;
+h4 {
+	margin-top: 25px;
+	margin-bottom: 5px;
 }
 
-/* .restName {
-	text-decoration: underline #880015;
-} */
+.styleAndPrice {
+	font-size: 15px;
+    letter-spacing: .013em;
+	margin-top: 5px;
+	margin-bottom: 7px;
+	font-family: Calibri;
+	color: #7F7F7F;
+	font-weight: 500;
+}
+.description {
+	margin-top: 5px;
+	font-family: Calibri;
+	color: black;
+	font-weight: normal;
+	font-size: 14px;
+}
+
+.restName {
+	font-family: Calibri;
+	font-weight: 550;
+	font-size: 18px;
+	letter-spacing: .086em;
+}
