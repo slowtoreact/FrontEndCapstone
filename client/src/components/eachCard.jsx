@@ -5,6 +5,10 @@ export default function EachCard(props) {
 
 	let restName;
 	let cursor;
+	let restDescription = props.restaurant.description;
+	let firstLetter = restDescription.charAt(0).toUpperCase();
+	let updatedDescription = firstLetter + restDescription.slice(1);
+
 	const [hover, setHover] = useState(false);
 
 	if (hover) {
@@ -35,7 +39,7 @@ console.log(restName)
 					<span className="foodRating">FOOD</span>
 					<span className="rating">{props.restaurant.rating}</span>
 				</div>
-				<p className="description">{props.restaurant.description}</p>
+				<p className="description">{updatedDescription}</p>
 			</div>
 		</div>
 	)
