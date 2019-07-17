@@ -9,7 +9,7 @@ class App extends React.Component {
     this.state = {
       restaurants: [],
       name: "The Kitchen",
-      style: "American"
+      style: "Food"
 
     }
   }

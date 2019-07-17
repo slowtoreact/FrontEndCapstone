@@ -157,7 +157,7 @@ h4 {
 
 .styleAndPrice {
 	font-size: 15px;
-    letter-spacing: .013em;
+  letter-spacing: .013em;
 	margin-top: 5px;
 	margin-bottom: 7px;
 	font-family: Calibri;
@@ -176,5 +176,5 @@ h4 {
 	font-family: Calibri;
 	font-weight: 550;
 	font-size: 18px;
-	letter-spacing: .086em;
+	letter-spacing: .1em;
 }

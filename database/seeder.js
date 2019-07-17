@@ -163,7 +163,7 @@ let coordinateGenerator = () => {
 }
 
 let syleGenerator = () => {
-	let styles = ["Armican", "Vegan", "Brunch", "Thai", "Seafood", "Bakery", "Coffee House", "Grill"];
+	let styles = ["American", "Vegan", "Brunch", "Thai", "Seafood", "Bakery", "Coffee House", "Grill"];
 	let index = Math.floor(Math.random()*styles.length);
 	return styles[index];
 }
