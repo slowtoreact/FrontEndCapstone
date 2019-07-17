@@ -1,3 +1,9 @@
+@font-face {
+	font-family: 'CalibreRegular';
+	src: url('./fonts/CalibreRegular.otf') format('opentype');
+}
+
+
 @media screen and (min-width: 25em) {
 	
 	.container {
@@ -27,15 +33,15 @@
 		background-color: #F1F1F2;
 	}
 	.ribbon {
-		font-family: Calibri;
+		font-family: CalibreRegular;
 		margin-left: 1vh;
 		margin-right: 1vh;
 		border-top: black solid 1px;
 		font-size: 22px;
     	letter-spacing: .004em;
 		line-height: 50px;
-		margin-bottom: 10px;
-		font-weight: 375;
+		margin-bottom: 8px;
+		font-weight: 300;
 	}
 }
 
@@ -126,21 +132,23 @@
 	align-content: center;
 }
 .foodRating {
-	font-family: Calibri;
+	font-family: CalibreRegular;
 	font-size: 13px;
-	margin-left: 5px;
-	letter-spacing: .061em;
+	margin-left: 8px;
+	letter-spacing: .08em;
 	font-weight: 550;
-	line-height: 20px;
+	line-height: 25px;
+	text-shadow: .2px .2px black;
 }
 
 .rating {
-	font-family: Calibri;
+	font-family: CalibreRegular;
 	margin-left: 5px;
 	color: #B7385E;
-	font-weight: 550;
+	font-weight: 600;
 	font-size: 13px;
-	line-height: 20px;
+	line-height: 25px;
+	letter-spacing: .08em;
 }
 
 #app {
@@ -152,7 +160,7 @@ body {
 }
 h4 {
 	margin-top: 25px;
-	margin-bottom: 5px;
+	margin-bottom: 7px;
 }
 
 .styleAndPrice {
@@ -160,21 +168,23 @@ h4 {
   letter-spacing: .013em;
 	margin-top: 5px;
 	margin-bottom: 7px;
-	font-family: Calibri;
-	color: #7F7F7F;
-	font-weight: 500;
+	font-family: CalibreRegular;
+	color: #656666;
+	font-weight: 550;
+	text-shadow: .1px .1px #656666;
 }
 .description {
 	margin-top: 5px;
-	font-family: Calibri;
+	font-family: CalibreRegular;
 	color: black;
-	font-weight: normal;
+	font-weight: 500;
 	font-size: 14px;
+	text-shadow: .1px .1px black;
 }
 
 .restName {
-	font-family: Calibri;
-	font-weight: 550;
+	font-family: CalibreRegular;
+	font-weight: 600;
 	font-size: 18px;
 	letter-spacing: .1em;
 }
