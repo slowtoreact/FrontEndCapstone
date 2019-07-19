@@ -12,19 +12,19 @@ export default function EachCard(props) {
 	const [hover, setHover] = useState(false);
 
 	if (hover) {
-		restName = { 
+		restName = {
 			transition: " all 300ms ease-in",
 			borderBottom: "1px solid #B7385E"
 		};
 		cursor = { "cursor": "pointer" }
 	} else {
-		restName = { 
+		restName = {
 			transition: " all 300ms ease-out",
-			borderBottom: "1px solid white", 
-			}
+			borderBottom: "1px solid white",
+		}
 		cursor = { "cursor": "arrow" }
 	}
-console.log(restName)
+	console.log(restName)
 	return (
 		<div className="card" onClick={(e) => props.onClick(e)} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}
 			style={cursor}>

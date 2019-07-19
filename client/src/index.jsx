@@ -19,10 +19,10 @@ class App extends React.Component {
     e.preventDefault();
     let decoded = (e.currentTarget.getElementsByTagName("b")[0].innerHTML).replace('amp;', '')
     let currentStyle = e.currentTarget.getElementsByClassName("styleAndPrice")[0].innerHTML.split(' ')
-    
+    console.log(decoded)
     function camelCase(str) {
-      return str.replace(/\w\S*/g, function(txt){
-          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      return str.replace(/\w\S*/g, function (txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
       });
     }
 
